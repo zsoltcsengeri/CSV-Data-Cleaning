@@ -50,4 +50,5 @@ The script writes `output_customers.csv` to the same directory.
 	- `DUE_SOON` if 0 <= `days_until_next_control` <= 14
 	- `OK` if `days_until_next_control` > 14
 	- `UNKNOWN` when `days_until_next_control` is missing
+	- The script prints a brief data-quality summary after execution.
 

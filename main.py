@@ -71,3 +71,7 @@ df["control_status"] = df["days_until_next_control"].apply(control_status)
 # Write the output to a new CSV file,
 # ensuring that the index is not included in the output.
 df.to_csv("output_customers.csv", index=False)
+
+print("Rows:", len(df)) # Print the total number of rows in the DataFrame to give an overview of the dataset size.
+print("Invalid dates:", df['src_date_next_control'].isna().sum()) # Print the count of invalid or missing dates in the `src_date_next_control` column to assess data quality.
+print(df['control_status'].value_counts(dropna=False)) # Print the count of each control status category, including any unknown statuses, to understand the distribution of control statuses in the dataset.
